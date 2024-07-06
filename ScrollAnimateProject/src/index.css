@@ -1,20 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.box {
-  @apply flex items-center justify-center size-[800px] text-[80px];
-}
-
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateY(10%);
-  transition: all 1.5s;
-}
-
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-}
