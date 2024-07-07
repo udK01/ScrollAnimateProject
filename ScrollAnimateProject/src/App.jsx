@@ -2,14 +2,25 @@ import React, { useEffect, useState } from "react";
 
 export default function App() {
   const [counter, setCounter] = useState(0);
+  const [reveal, setReveal] = useState(false);
+
   const elements = ["Developer", "Programmer", "Designer"];
+  const timer = 4000;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCounter((prevCounter) => (prevCounter + 1) % elements.length);
-    }, 2000);
+      setReveal(false);
+    }, timer);
 
-    return () => clearInterval(intervalId);
+    const revealId = setInterval(() => {
+      setReveal(true);
+    }, timer - 250);
+
+    return () => {
+      clearInterval(intervalId);
+      clearInterval(revealId);
+    };
   }, [elements.length]);
 
   return (
@@ -28,16 +39,19 @@ export default function App() {
                 <div
                   key={index}
                   className={`absolute transition-all ${
-                    counter === index
-                      ? "opacity-100 blur-0 underline translate-y-0"
-                      : "opacity-0 blur-md no-underline text- translate-y-2"
+                    counter === index ? "opacity-100" : "opacity-0"
                   }`}
-                  style={{
-                    transitionDuration: "750ms",
-                    textDecorationColor: "orange",
-                  }}
                 >
-                  {element}
+                  <div className="flex">
+                    <div
+                      className={`absolute h-[85%] mt-4 bg-green-500 ${
+                        reveal ? "animate-grow" : "animate-shrink"
+                      }`}
+                      style={{ transitionDuration: "750ms" }}
+                    />
+                    {element}
+                    <div className="text-orange-500">.</div>
+                  </div>
                 </div>
               ))}
             </div>

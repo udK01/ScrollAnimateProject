@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+.animate-grow {
+  animation: grow 0.75s forwards;
+}
+
+.animate-shrink {
+  animation: shrink 0.75s forwards;
+}
+
+.transition-width {
+  transition: width 0.75s;
+}
