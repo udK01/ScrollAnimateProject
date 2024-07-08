@@ -57,6 +57,9 @@ export default function App() {
             </div>
           </div>
         </div>
+        <div className="container">
+          <p className="text">Typewriter.</p>
+        </div>
       </div>
     </section>
   );
