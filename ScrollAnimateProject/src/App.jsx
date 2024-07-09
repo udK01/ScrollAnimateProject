@@ -24,14 +24,16 @@ export default function App() {
   }, [elements.length]);
 
   return (
-    <section className="flex justify-center text-[100px] bg-sky-950 text-white h-screen">
-      <div>
+    <section className="bg-sky-950 text-white h-screen space-y-10">
+      {/* Intro About Me. */}
+      <div className="flex flex-col items-center text-[70px]">
         <div className="flex">
           <div>Hi, I am</div>&nbsp;
           <div>udK</div>
           <div className="text-orange-500">.</div>
         </div>
-        <div className="flex text-[70px]">
+        <div className="flex -translate-x-[150px]">
+          {/* <div className="border-l-2 border-b-2 border-orange-500 h-[35px] w-[35px] mt-[20px] mr-[20px]" /> */}
           <div>I am a&nbsp;</div>
           <div>
             <div>
@@ -57,8 +59,43 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="container">
-          <p className="text">Typewriter.</p>
+      </div>
+
+      {/* Typewriter Effect */}
+      <div className="flex justify-center">
+        <div className="inline-block text-[70px]">
+          <p className="text">Info Dump.</p>
+        </div>
+      </div>
+
+      {/* Test Paragraphs */}
+      <div className="flex w-[60%] mx-auto gap-16">
+        <div className="text-[16px] w-1/3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          dolores atque harum qui aspernatur unde, sapiente est laudantium, et
+          quia eveniet totam provident vel doloremque natus nisi odio saepe.
+          Neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
+          optio error. Doloribus quas vel ab accusamus officiis, libero rem quis
+          earum delectus perferendis maxime, deleniti quasi porro, enim culpa
+          necessitatibus.
+        </div>
+        <div className="text-[16px] w-1/3 mt-10">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          dolores atque harum qui aspernatur unde, sapiente est laudantium, et
+          quia eveniet totam provident vel doloremque natus nisi odio saepe.
+          Neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
+          optio error. Doloribus quas vel ab accusamus officiis, libero rem quis
+          earum delectus perferendis maxime, deleniti quasi porro, enim culpa
+          necessitatibus.
+        </div>
+        <div className="text-[16px] w-1/3 mt-20">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          dolores atque harum qui aspernatur unde, sapiente est laudantium, et
+          quia eveniet totam provident vel doloremque natus nisi odio saepe.
+          Neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
+          optio error. Doloribus quas vel ab accusamus officiis, libero rem quis
+          earum delectus perferendis maxime, deleniti quasi porro, enim culpa
+          necessitatibus.
         </div>
       </div>
     </section>
