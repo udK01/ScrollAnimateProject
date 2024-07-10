@@ -23,8 +23,27 @@ export default function App() {
     };
   }, [elements.length]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hide");
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      hiddenElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
-    <section className="bg-sky-950 text-white h-screen space-y-10">
+    <section className="bg-sky-950 text-white space-y-10">
       {/* Intro About Me. */}
       <div className="flex flex-col items-center text-[70px]">
         <div className="flex">
@@ -33,7 +52,6 @@ export default function App() {
           <div className="text-orange-500">.</div>
         </div>
         <div className="flex -translate-x-[150px]">
-          {/* <div className="border-l-2 border-b-2 border-orange-500 h-[35px] w-[35px] mt-[20px] mr-[20px]" /> */}
           <div>I am a&nbsp;</div>
           <div>
             <div>
@@ -70,7 +88,7 @@ export default function App() {
 
       {/* Test Paragraphs */}
       <div className="flex w-[60%] mx-auto gap-16">
-        <div className="text-[16px] w-1/3">
+        <div className="text-[16px] w-1/3 hide">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
           dolores atque harum qui aspernatur unde, sapiente est laudantium, et
           quia eveniet totam provident vel doloremque natus nisi odio saepe.
@@ -79,7 +97,7 @@ export default function App() {
           earum delectus perferendis maxime, deleniti quasi porro, enim culpa
           necessitatibus.
         </div>
-        <div className="text-[16px] w-1/3 mt-10">
+        <div className="text-[16px] w-1/3 mt-10 hide">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
           dolores atque harum qui aspernatur unde, sapiente est laudantium, et
           quia eveniet totam provident vel doloremque natus nisi odio saepe.
@@ -88,7 +106,7 @@ export default function App() {
           earum delectus perferendis maxime, deleniti quasi porro, enim culpa
           necessitatibus.
         </div>
-        <div className="text-[16px] w-1/3 mt-20">
+        <div className="text-[16px] w-1/3 mt-20 hide">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
           dolores atque harum qui aspernatur unde, sapiente est laudantium, et
           quia eveniet totam provident vel doloremque natus nisi odio saepe.
@@ -97,6 +115,14 @@ export default function App() {
           earum delectus perferendis maxime, deleniti quasi porro, enim culpa
           necessitatibus.
         </div>
+      </div>
+
+      <div className="space-y-[400px]">
+        <div>Card</div>
+        <div>Card</div>
+        <div>Card</div>
+        <div>Card</div>
+        <div>Card</div>
       </div>
     </section>
   );
