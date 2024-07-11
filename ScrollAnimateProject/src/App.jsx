@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Card from "./components/Card";
 
 export default function App() {
   const [counter, setCounter] = useState(0);
@@ -7,6 +8,7 @@ export default function App() {
   const elements = ["Developer", "Programmer", "Designer"];
   const timer = 4000;
 
+  // Rotation Effect
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCounter((prevCounter) => (prevCounter + 1) % elements.length);
@@ -23,6 +25,7 @@ export default function App() {
     };
   }, [elements.length]);
 
+  // On scroll show effect
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -45,7 +48,7 @@ export default function App() {
   return (
     <section className="bg-sky-950 text-white space-y-10">
       {/* Intro About Me. */}
-      <div className="flex flex-col items-center text-[70px]">
+      <div className="flex flex-col items-center justify-center mx-auto text-[70px] h-screen hide">
         <div className="flex">
           <div>Hi, I am</div>&nbsp;
           <div>udK</div>
@@ -117,13 +120,27 @@ export default function App() {
         </div>
       </div>
 
-      <div className="space-y-[400px]">
-        <div>Card</div>
-        <div>Card</div>
-        <div>Card</div>
-        <div>Card</div>
-        <div>Card</div>
+      {/* Space */}
+      <div className="h-[200px]" />
+
+      {/* Typewriter Effect */}
+      <div className="flex justify-center">
+        <div className="inline-block text-[70px]">
+          <p className="text2">Profiles.</p>
+        </div>
       </div>
+
+      {/* Cards */}
+      <div className="flex space-x-[30px] justify-center">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+
+      {/* Space */}
+      <div className="h-[200px]" />
     </section>
   );
 }
