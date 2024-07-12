@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
+import TypeWriter from "./components/TypeWriter";
 
 export default function App() {
   const [counter, setCounter] = useState(0);
@@ -54,7 +55,16 @@ export default function App() {
           <div>udK</div>
           <div className="text-orange-500">.</div>
         </div>
-        <div className="flex -translate-x-[150px]">
+        <div className="flex items-center justify-center">
+          <div className="flex gap-4">
+            I am a
+            <p className="text-orange-500">
+              <TypeWriter />
+            </p>
+          </div>
+        </div>
+        {/* Green Overlay  Effect */}
+        {/* <div className="flex -translate-x-[150px]">
           <div>I am a&nbsp;</div>
           <div>
             <div>
@@ -79,7 +89,7 @@ export default function App() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Typewriter Effect */}
