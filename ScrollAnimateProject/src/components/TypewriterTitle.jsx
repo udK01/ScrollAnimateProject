@@ -12,24 +12,21 @@ export default function TypewriterTitle({ text }) {
       loop: false,
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (!typedRef.current) {
-              typedRef.current = new Typed(titleRef.current, options);
-            } else {
-              typedRef.current.start();
-            }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (!typedRef.current) {
+            typedRef.current = new Typed(titleRef.current, options);
           } else {
-            if (typedRef.current) {
-              typedRef.current.stop();
-            }
+            typedRef.current.reset();
           }
-        });
-      },
-      { threshold: 0.5 }
-    );
+        } else {
+          if (typedRef.current) {
+            typedRef.current.stop();
+          }
+        }
+      });
+    });
 
     if (titleRef.current) {
       observer.observe(titleRef.current);
@@ -41,9 +38,10 @@ export default function TypewriterTitle({ text }) {
       }
       if (typedRef.current) {
         typedRef.current.destroy();
+        typedRef.current = null;
       }
     };
-  }, []);
+  }, [text]);
 
   return (
     <div className="flex">
