@@ -6,9 +6,10 @@ export default function TypeWriter() {
 
   useEffect(() => {
     const options = {
-      strings: ["Developer", "Programmer", "Designer"],
+      strings: ["Developer.", "Programmer.", "Designer."],
       typeSpeed: 75,
       backSpeed: 100,
+      backDelay: 3000,
       loop: true,
     };
 
