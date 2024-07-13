@@ -1,6 +1,6 @@
 export default function Card() {
   return (
-    <div className="flex flex-col items-center px-4 justify-center w-[200px] h-[350px] border-2 bg-primary border-orange-500 rounded-md font-poppins">
+    <div className="flex flex-col items-center px-4 justify-center w-[200px] h-[350px] border-2 bg-primary bg-slate-700 border-white rounded-md font-poppins">
       <img
         src="./avatar.png"
         className="size-20 rounded-full border-2 border-orange-500 bg-[#ff9912] my-2"
