@@ -39,11 +39,25 @@ export default function App() {
       });
     });
 
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("slide");
+        } else {
+          entry.target.classList.remove("slide");
+        }
+      });
+    });
+
     const hiddenElements = document.querySelectorAll(".hide");
     hiddenElements.forEach((el) => observer.observe(el));
 
+    const cardElements = document.querySelectorAll(".card");
+    cardElements.forEach((card) => cardObserver.observe(card));
+
     return () => {
       hiddenElements.forEach((el) => observer.unobserve(el));
+      cardElements.forEach((card) => cardObserver.unobserve(card));
     };
   }, []);
 
@@ -194,11 +208,21 @@ export default function App() {
 
         {/* Cards */}
         <div className="flex space-x-[30px] justify-center">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <div className="card">
+            <Card />
+          </div>
+          <div className="card">
+            <Card />
+          </div>
+          <div className="card">
+            <Card />
+          </div>
+          <div className="card">
+            <Card />
+          </div>
+          <div className="card">
+            <Card />
+          </div>
         </div>
       </section>
     </section>
