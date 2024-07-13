@@ -98,8 +98,6 @@ export default function App() {
       {/* Divider 1*/}
       <div className="relative w-full overflow-hidden transform rotate-180 bg-blue-900">
         <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
           className="w-[134%] h-[129px] block"
@@ -164,7 +162,6 @@ export default function App() {
       {/* Divider 2*/}
       <div className="relative w-full overflow-hidden transform rotate-180 bg-green-500">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
           className="w-[134%] h-[129px] block"

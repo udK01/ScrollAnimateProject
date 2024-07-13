@@ -17,8 +17,6 @@ export default function TypewriterTitle({ text }) {
         if (entry.isIntersecting) {
           if (!typedRef.current) {
             typedRef.current = new Typed(titleRef.current, options);
-          } else {
-            typedRef.current.reset();
           }
         } else {
           if (typedRef.current) {
