@@ -18,10 +18,6 @@ export default function TypewriterTitle({ text }) {
           if (!typedRef.current) {
             typedRef.current = new Typed(titleRef.current, options);
           }
-        } else {
-          if (typedRef.current) {
-            typedRef.current.stop();
-          }
         }
       });
     });
