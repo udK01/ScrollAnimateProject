@@ -69,7 +69,7 @@ export default function App() {
         <div className="flex flex-col items-center justify-center mx-auto text-[70px] h-screen hide">
           <div className="flex">
             <div>Hi, I am</div>&nbsp;
-            <div>udK</div>
+            <div>Dom</div>
             <div className="text-orange-500">.</div>
           </div>
           <div className="flex items-center justify-center">

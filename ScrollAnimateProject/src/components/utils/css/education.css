@@ -1,3 +1,5 @@
+/* Moving Circle Border */
+
 @keyframes rotate-border {
   from {
     transform: rotate(0deg);
@@ -32,4 +34,85 @@
 
 .rotate-border-wrapper:hover::before {
   border-color: #f97316;
+}
+
+/* Moving Rectangle Border */
+
+.square-border-wrapper {
+  position: relative;
+  width: 400px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square-border-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 10px dashed #15803d;
+  pointer-events: none;
+}
+
+.square-border-wrapper:hover::before {
+  border-color: #f97316;
+}
+
+/* Text Animation */
+
+@keyframes title-appear {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+    filter: blur(5px);
+    font-size: 10px;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    font-size: 30px;
+  }
+}
+
+@keyframes text-appear {
+  from {
+    transform: translateY(-30%);
+    opacity: 0;
+    filter: blur(5px);
+    font-size: 10px;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+    font-size: 16px;
+  }
+}
+
+@keyframes book-move {
+  from {
+    transform: translateX(100%);
+    transform: translateY(120%);
+  }
+  to {
+    transform: translateX(0%);
+    transform: translateY(0%);
+  }
+}
+
+.animate-title-appear {
+  animation: title-appear 1.25s ease forwards;
+}
+
+.animate-text-appear {
+  animation: text-appear 1.25s ease forwards;
+}
+
+.animate-book-move {
+  animation: book-move 1.25s ease forwards;
 }
