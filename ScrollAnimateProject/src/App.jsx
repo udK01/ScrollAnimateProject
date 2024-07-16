@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
 import TypeWriter from "./components/TypeWriter";
 import TypeWriterTitle from "./components/TypewriterTitle";
+import Education from "./components/Education";
 
 export default function App() {
   const [counter, setCounter] = useState(0);
@@ -142,7 +143,9 @@ export default function App() {
           </div>
         </div>
         {/* Test Paragraphs */}
-        <div className="flex w-[60%] mx-auto gap-16">
+        <Education />
+
+        {/* <div className="flex w-[60%] mx-auto gap-16">
           <div className="text-[16px] w-1/3 hide">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
             dolores atque harum qui aspernatur unde, sapiente est laudantium, et
@@ -170,7 +173,7 @@ export default function App() {
             quis earum delectus perferendis maxime, deleniti quasi porro, enim
             culpa necessitatibus.
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Divider 2*/}

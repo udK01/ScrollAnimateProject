@@ -1,0 +1,35 @@
+@keyframes rotate-border {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-border-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.rotate-border-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 10px dashed #15803d;
+  border-radius: 50%;
+  animation: rotate-border 10s linear infinite;
+  pointer-events: none;
+}
+
+.rotate-border-wrapper:hover::before {
+  border-color: #f97316;
+}
