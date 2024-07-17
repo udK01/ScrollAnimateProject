@@ -94,7 +94,7 @@
   }
 }
 
-@keyframes book-move {
+@keyframes move {
   from {
     transform: translateX(100%);
     transform: translateY(120%);
@@ -113,6 +113,6 @@
   animation: text-appear 1.25s ease forwards;
 }
 
-.animate-book-move {
-  animation: book-move 1.25s ease forwards;
+.animate-move {
+  animation: move 1.25s ease forwards;
 }
