@@ -15,8 +15,15 @@ export default function TypewriterTitle({ text }) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          if (!typedRef.current) {
-            typedRef.current = new Typed(titleRef.current, options);
+          if (typedRef.current) {
+            typedRef.current.destroy();
+          }
+          typedRef.current = new Typed(titleRef.current, options);
+        } else {
+          if (typedRef.current) {
+            typedRef.current.destroy();
+            typedRef.current = null;
+            titleRef.current.innerHTML = "";
           }
         }
       });

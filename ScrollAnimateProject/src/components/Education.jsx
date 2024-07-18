@@ -4,12 +4,37 @@ import { GiDiploma } from "react-icons/gi";
 
 import "./utils/css/education.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Education() {
   const [secondary, setSecondary] = new useState(false);
   const [college, setCollege] = new useState(false);
   const [university, setUniversity] = new useState(false);
+
+  useEffect(() => {
+    const secondaryElement = document.getElementById("secondary");
+    const collegeElement = document.getElementById("college");
+    const universityElement = document.getElementById("university");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          entry.target.classList.remove("square-border-wrapper");
+          entry.target.classList.add("rotate-border-wrapper");
+          setSecondary(false);
+          setCollege(false);
+          setUniversity(false);
+        }
+      });
+    });
+
+    const elements = [secondaryElement, collegeElement, universityElement];
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   function reveal(x) {
     switch (x) {
