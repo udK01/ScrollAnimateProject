@@ -92,7 +92,7 @@ export default function Education() {
           <div
             className={`p-2 space-y-4 italic ${
               secondary && `animate-text-appear`
-            } flex flex-col justify-between`}
+            } h-full flex flex-col justify-between pt-5`}
           >
             <div className="text-center">
               Attained a comprehensive academic foundation at Dylan Thomas
@@ -129,7 +129,7 @@ export default function Education() {
           <div
             className={`p-2 space-y-4 italic ${
               college && `animate-text-appear`
-            } flex flex-col justify-between`}
+            } h-full flex flex-col justify-between pt-5`}
           >
             <div className="text-center">
               Concluded studies at Gower College Swansea, attaining three
@@ -167,7 +167,7 @@ export default function Education() {
           <div
             className={`space-y-4 italic ${
               university && `animate-text-appear`
-            } flex flex-col justify-between`}
+            } h-full flex flex-col justify-between pt-5`}
           >
             <div className="text-center">
               Successfully completed studies at Swansea University, earning a
