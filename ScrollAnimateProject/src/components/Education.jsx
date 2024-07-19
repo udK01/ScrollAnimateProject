@@ -69,7 +69,7 @@ export default function Education() {
     <div className="flex justify-evenly w-[80%] mx-auto gap-16">
       <div
         id="secondary"
-        className="rotate-border-wrapper p-10 hide flex flex-col hover:cursor-pointer"
+        className="rotate-border-wrapper p-10 hide flex flex-col justify-around hover:cursor-pointer"
         onClick={() => reveal(1)}
       >
         <div
@@ -90,22 +90,25 @@ export default function Education() {
         </div>
         {secondary && (
           <div
-            className={`p-2 space-y-4 ${secondary && `animate-text-appear`}`}
+            className={`p-2 space-y-4 italic ${
+              secondary && `animate-text-appear`
+            }`}
           >
-            <div>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptatem, provident iure et dignissimos dolore accusantium
-              laboriosam mollitia esse, eveniet modi eaque excepturi? Quas quod
-              deleniti distinctio eum, hic similique consequatur?
+            <div className="text-center">
+              Attained a comprehensive academic foundation at Dylan Thomas
+              Community School, successfully achieving outstanding results with
+              10 qualifications.
             </div>
-            <div className="text-[32px] font-bold text-center">2015-2018</div>
           </div>
+        )}
+        {secondary && (
+          <div className="text-[32px] font-bold text-center">2015-2018</div>
         )}
       </div>
 
       <div
         id="college"
-        className="rotate-border-wrapper p-10 hide flex flex-col hover:cursor-pointer"
+        className="rotate-border-wrapper p-10 hide flex flex-col justify-around hover:cursor-pointer"
         onClick={() => reveal(2)}
       >
         <div
@@ -123,21 +126,27 @@ export default function Education() {
           )}
         </div>
         {college && (
-          <div className={`p-2 space-y-4 ${college && `animate-text-appear`}`}>
-            <div>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptatem, provident iure et dignissimos dolore accusantium
-              laboriosam mollitia esse, eveniet modi eaque excepturi? Quas quod
-              deleniti distinctio eum, hic similique consequatur?
+          <div
+            className={`p-2 space-y-4 italic ${
+              college && `animate-text-appear`
+            }`}
+          >
+            <div className="text-center">
+              Concluded studies at Gower College Swansea, attaining three
+              exemplary
+              <br /> A-level qualifications in Mathematics, Computer Science and
+              Robotics.
             </div>
-            <div className="text-[32px] font-bold text-center">2015-2018</div>
           </div>
+        )}
+        {college && (
+          <div className="text-[32px] font-bold text-center">2018-2020</div>
         )}
       </div>
 
       <div
         id="university"
-        className="rotate-border-wrapper p-10 hide flex flex-col hover:cursor-pointer"
+        className="rotate-border-wrapper p-10 hide flex flex-col justify-around hover:cursor-pointer"
         onClick={() => reveal(3)}
       >
         <div
@@ -158,16 +167,19 @@ export default function Education() {
         </div>
         {university && (
           <div
-            className={`p-2 space-y-4 ${university && `animate-text-appear`}`}
+            className={`space-y-4 italic ${
+              university && `animate-text-appear`
+            }`}
           >
-            <div>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Voluptatem, provident iure et dignissimos dolore accusantium
-              laboriosam mollitia esse, eveniet modi eaque excepturi? Quas quod
-              deleniti distinctio eum, hic similique consequatur?
+            <div className="text-center">
+              Successfully completed studies at Swansea University, earning a
+              Bachelor's degree in Computer Science with First Class, Honors
+              (1st), demonstrating a strong foundation in the field.
             </div>
-            <div className="text-[32px] font-bold text-center">2015-2018</div>
           </div>
+        )}
+        {university && (
+          <div className="text-[32px] font-bold text-center">2020-2023</div>
         )}
       </div>
     </div>
