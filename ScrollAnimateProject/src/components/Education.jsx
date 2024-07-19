@@ -74,7 +74,7 @@ export default function Education() {
       >
         <div
           className={`w-full flex justify-center ${
-            secondary && "animate-move"
+            secondary && "animate-move justify-around"
           }`}
         >
           <FaBook className={`size-24`} />
@@ -92,17 +92,15 @@ export default function Education() {
           <div
             className={`p-2 space-y-4 italic ${
               secondary && `animate-text-appear`
-            }`}
+            } flex flex-col justify-between`}
           >
             <div className="text-center">
               Attained a comprehensive academic foundation at Dylan Thomas
               Community School, successfully achieving outstanding results with
               10 qualifications.
             </div>
+            <div className="text-[32px] font-bold text-center">2015-2018</div>
           </div>
-        )}
-        {secondary && (
-          <div className="text-[32px] font-bold text-center">2015-2018</div>
         )}
       </div>
 
@@ -112,7 +110,9 @@ export default function Education() {
         onClick={() => reveal(2)}
       >
         <div
-          className={`w-full flex justify-center ${college && "animate-move"}`}
+          className={`w-full flex justify-center ${
+            college && "animate-move justify-around"
+          }`}
         >
           <FaGraduationCap className={`size-24`} />
           {college && (
@@ -129,7 +129,7 @@ export default function Education() {
           <div
             className={`p-2 space-y-4 italic ${
               college && `animate-text-appear`
-            }`}
+            } flex flex-col justify-between`}
           >
             <div className="text-center">
               Concluded studies at Gower College Swansea, attaining three
@@ -137,10 +137,8 @@ export default function Education() {
               <br /> A-level qualifications in Mathematics, Computer Science and
               Robotics.
             </div>
+            <div className="text-[32px] font-bold text-center">2018-2020</div>
           </div>
-        )}
-        {college && (
-          <div className="text-[32px] font-bold text-center">2018-2020</div>
         )}
       </div>
 
@@ -151,7 +149,7 @@ export default function Education() {
       >
         <div
           className={`w-full flex justify-center ${
-            university && "animate-move"
+            university && "animate-move justify-around"
           }`}
         >
           <GiDiploma className={`size-24`} />
@@ -169,17 +167,15 @@ export default function Education() {
           <div
             className={`space-y-4 italic ${
               university && `animate-text-appear`
-            }`}
+            } flex flex-col justify-between`}
           >
             <div className="text-center">
               Successfully completed studies at Swansea University, earning a
               Bachelor's degree in Computer Science with First Class, Honors
               (1st), demonstrating a strong foundation in the field.
             </div>
+            <div className="text-[32px] font-bold text-center">2020-2023</div>
           </div>
-        )}
-        {university && (
-          <div className="text-[32px] font-bold text-center">2020-2023</div>
         )}
       </div>
     </div>
