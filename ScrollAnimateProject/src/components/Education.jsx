@@ -1,10 +1,12 @@
+import TypeWriterTitle from "./TypeWriterTitle";
+
+import { useEffect, useState } from "react";
+
 import { FaBook } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa";
 import { GiDiploma } from "react-icons/gi";
 
 import "./utils/css/education.css";
-
-import { useEffect, useState } from "react";
 
 export default function Education() {
   const [secondary, setSecondary] = new useState(false);
@@ -66,118 +68,125 @@ export default function Education() {
   }
 
   return (
-    <div className="flex justify-evenly w-[80%] mx-auto gap-16">
-      <div
-        id="secondary"
-        className="rotate-border-wrapper p-10 hide flex flex-col justify-around hover:cursor-pointer"
-        onClick={() => reveal(1)}
-      >
+    <section className="bg-green-500 space-y-20 p-10">
+      <div className="flex justify-center">
+        <div className="inline-block text-[70px]">
+          <TypeWriterTitle text={"Education."} />
+        </div>
+      </div>
+      <div className="flex justify-evenly w-[80%] mx-auto gap-16">
         <div
-          className={`w-full flex justify-center ${
-            secondary && "animate-move justify-around"
-          }`}
+          id="secondary"
+          className="rotate-border-wrapper p-10 hide flex flex-col justify-around hover:cursor-pointer"
+          onClick={() => reveal(1)}
         >
-          <FaBook className={`size-24`} />
+          <div
+            className={`w-full flex justify-center ${
+              secondary && "animate-move justify-around"
+            }`}
+          >
+            <FaBook className={`size-24`} />
+            {secondary && (
+              <h1
+                className={`flex items-center ${
+                  secondary && "animate-title-appear"
+                }`}
+              >
+                Dylan Thomas <br /> Com. School
+              </h1>
+            )}
+          </div>
           {secondary && (
-            <h1
-              className={`flex items-center ${
-                secondary && "animate-title-appear"
-              }`}
+            <div
+              className={`p-2 space-y-4 italic ${
+                secondary && `animate-text-appear`
+              } h-full flex flex-col justify-between pt-5`}
             >
-              Dylan Thomas <br /> Com. School
-            </h1>
+              <div className="text-center">
+                Attained a comprehensive academic foundation at Dylan Thomas
+                Community School, successfully achieving outstanding results
+                with 10 qualifications.
+              </div>
+              <div className="text-[32px] font-bold text-center">2015-2018</div>
+            </div>
           )}
         </div>
-        {secondary && (
-          <div
-            className={`p-2 space-y-4 italic ${
-              secondary && `animate-text-appear`
-            } h-full flex flex-col justify-between pt-5`}
-          >
-            <div className="text-center">
-              Attained a comprehensive academic foundation at Dylan Thomas
-              Community School, successfully achieving outstanding results with
-              10 qualifications.
-            </div>
-            <div className="text-[32px] font-bold text-center">2015-2018</div>
-          </div>
-        )}
-      </div>
 
-      <div
-        id="college"
-        className="rotate-border-wrapper p-10 hide flex flex-col justify-around hover:cursor-pointer"
-        onClick={() => reveal(2)}
-      >
         <div
-          className={`w-full flex justify-center ${
-            college && "animate-move justify-around"
-          }`}
+          id="college"
+          className="rotate-border-wrapper p-10 hide flex flex-col justify-around hover:cursor-pointer"
+          onClick={() => reveal(2)}
         >
-          <FaGraduationCap className={`size-24`} />
+          <div
+            className={`w-full flex justify-center ${
+              college && "animate-move justify-around"
+            }`}
+          >
+            <FaGraduationCap className={`size-24`} />
+            {college && (
+              <h1
+                className={`flex items-center ${
+                  college && "animate-title-appear"
+                }`}
+              >
+                Gorseinon <br /> College
+              </h1>
+            )}
+          </div>
           {college && (
-            <h1
-              className={`flex items-center ${
-                college && "animate-title-appear"
-              }`}
+            <div
+              className={`p-2 space-y-4 italic ${
+                college && `animate-text-appear`
+              } h-full flex flex-col justify-between pt-5`}
             >
-              Gorseinon <br /> College
-            </h1>
+              <div className="text-center">
+                Concluded studies at Gower College Swansea, attaining three
+                exemplary
+                <br /> A-level qualifications in Mathematics, Computer Science
+                and Robotics.
+              </div>
+              <div className="text-[32px] font-bold text-center">2018-2020</div>
+            </div>
           )}
         </div>
-        {college && (
-          <div
-            className={`p-2 space-y-4 italic ${
-              college && `animate-text-appear`
-            } h-full flex flex-col justify-between pt-5`}
-          >
-            <div className="text-center">
-              Concluded studies at Gower College Swansea, attaining three
-              exemplary
-              <br /> A-level qualifications in Mathematics, Computer Science and
-              Robotics.
-            </div>
-            <div className="text-[32px] font-bold text-center">2018-2020</div>
-          </div>
-        )}
-      </div>
 
-      <div
-        id="university"
-        className="rotate-border-wrapper p-10 hide flex flex-col justify-around hover:cursor-pointer"
-        onClick={() => reveal(3)}
-      >
         <div
-          className={`w-full flex justify-center ${
-            university && "animate-move justify-around"
-          }`}
+          id="university"
+          className="rotate-border-wrapper p-10 hide flex flex-col justify-around hover:cursor-pointer"
+          onClick={() => reveal(3)}
         >
-          <GiDiploma className={`size-24`} />
+          <div
+            className={`w-full flex justify-center ${
+              university && "animate-move justify-around"
+            }`}
+          >
+            <GiDiploma className={`size-24`} />
+            {university && (
+              <h1
+                className={`flex items-center ${
+                  university && "animate-title-appear"
+                }`}
+              >
+                Swansea <br /> University
+              </h1>
+            )}
+          </div>
           {university && (
-            <h1
-              className={`flex items-center ${
-                university && "animate-title-appear"
-              }`}
+            <div
+              className={`space-y-4 italic ${
+                university && `animate-text-appear`
+              } h-full flex flex-col justify-between pt-5`}
             >
-              Swansea <br /> University
-            </h1>
+              <div className="text-center">
+                Successfully completed studies at Swansea University, earning a
+                Bachelor's degree in Computer Science with First Class, Honors
+                (1st), demonstrating a strong foundation in the field.
+              </div>
+              <div className="text-[32px] font-bold text-center">2020-2023</div>
+            </div>
           )}
         </div>
-        {university && (
-          <div
-            className={`space-y-4 italic ${
-              university && `animate-text-appear`
-            } h-full flex flex-col justify-between pt-5`}
-          >
-            <div className="text-center">
-              Successfully completed studies at Swansea University, earning a
-              Bachelor's degree in Computer Science with First Class, Honors
-              (1st), demonstrating a strong foundation in the field.
-            </div>
-            <div className="text-[32px] font-bold text-center">2020-2023</div>
-          </div>
-        )}
       </div>
-    </div>
+    </section>
   );
 }

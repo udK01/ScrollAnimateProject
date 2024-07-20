@@ -1,14 +1,22 @@
+import TypeWriter from "./TypeWriter";
+
 export default function AboutMe() {
   return (
-    <section className="bg-midTone h-screen w-full">
-      <div className="flex flex-col items-center">
-        <div className="font-poppins text-center">
-          <span className="text-white text-[100px]">Company Name</span>
-          <span className="text-orange-500 text-[150px]">.</span>
+    <section className="bg-blue-900">
+      <div className="flex flex-col items-center justify-center mx-auto text-[70px] h-screen hide">
+        <div className="flex">
+          <div>Hi, I am</div>&nbsp;
+          <div>Dom</div>
+          <div className="text-orange-500">.</div>
         </div>
-        <span className="text-white text-[30px] -translate-y-[30px]">
-          "slogan slogan slogan."
-        </span>
+        <div className="flex items-center justify-center">
+          <div className="flex gap-4">
+            I am a
+            <p className="text-orange-500">
+              <TypeWriter />
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

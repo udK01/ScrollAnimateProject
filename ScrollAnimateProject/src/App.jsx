@@ -1,33 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Card from "./components/Card";
-import TypeWriter from "./components/TypeWriter";
-import TypeWriterTitle from "./components/TypewriterTitle";
+
 import Education from "./components/Education";
+import AboutMe from "./components/AboutMe";
+import Projects from "./components/Projects";
+import Experiences from "./components/Experiences";
 
 export default function App() {
-  const [counter, setCounter] = useState(0);
-  const [reveal, setReveal] = useState(false);
-
-  const elements = ["Developer", "Programmer", "Designer"];
-  const timer = 4000;
-
-  // Rotation Effect
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCounter((prevCounter) => (prevCounter + 1) % elements.length);
-      setReveal(false);
-    }, timer);
-
-    const revealId = setInterval(() => {
-      setReveal(true);
-    }, timer - 250);
-
-    return () => {
-      clearInterval(intervalId);
-      clearInterval(revealId);
-    };
-  }, [elements.length]);
-
   // On scroll show effect
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -64,51 +42,7 @@ export default function App() {
 
   return (
     <section className="text-white font-poppins">
-      {/* Intro About Me. */}
-      <section className="bg-blue-900">
-        <div className="flex flex-col items-center justify-center mx-auto text-[70px] h-screen hide">
-          <div className="flex">
-            <div>Hi, I am</div>&nbsp;
-            <div>Dom</div>
-            <div className="text-orange-500">.</div>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="flex gap-4">
-              I am a
-              <p className="text-orange-500">
-                <TypeWriter />
-              </p>
-            </div>
-          </div>
-          {/* Green Overlay  Effect */}
-          {/* <div className="flex -translate-x-[150px]">
-          <div>I am a&nbsp;</div>
-          <div>
-            <div>
-              {elements.map((element, index) => (
-                <div
-                  key={index}
-                  className={`absolute transition-all ${
-                    counter === index ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  <div className="flex">
-                    <div
-                      className={`absolute h-[85%] mt-4 bg-green-500 ${
-                        reveal ? "animate-grow" : "animate-shrink"
-                      }`}
-                      style={{ transitionDuration: "750ms" }}
-                    />
-                    {element}
-                    <div className="text-orange-500">.</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
-        </div>
-      </section>
+      <AboutMe />
 
       {/* Divider 1*/}
       <div className="relative w-full overflow-hidden transform rotate-180 bg-blue-900">
@@ -134,47 +68,7 @@ export default function App() {
         </svg>
       </div>
 
-      {/* Info Dump Section */}
-      <section className="bg-green-500 space-y-20 p-10">
-        {/* Typewriter Effect */}
-        <div className="flex justify-center">
-          <div className="inline-block text-[70px]">
-            <TypeWriterTitle text={"Education."} />
-          </div>
-        </div>
-        {/* Test Paragraphs */}
-        <Education />
-
-        {/* <div className="flex w-[60%] mx-auto gap-16">
-          <div className="text-[16px] w-1/3 hide">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-            dolores atque harum qui aspernatur unde, sapiente est laudantium, et
-            quia eveniet totam provident vel doloremque natus nisi odio saepe.
-            Neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
-            optio error. Doloribus quas vel ab accusamus officiis, libero rem
-            quis earum delectus perferendis maxime, deleniti quasi porro, enim
-            culpa necessitatibus.
-          </div>
-          <div className="text-[16px] w-1/3 mt-10 hide">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-            dolores atque harum qui aspernatur unde, sapiente est laudantium, et
-            quia eveniet totam provident vel doloremque natus nisi odio saepe.
-            Neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
-            optio error. Doloribus quas vel ab accusamus officiis, libero rem
-            quis earum delectus perferendis maxime, deleniti quasi porro, enim
-            culpa necessitatibus.
-          </div>
-          <div className="text-[16px] w-1/3 mt-20 hide">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-            dolores atque harum qui aspernatur unde, sapiente est laudantium, et
-            quia eveniet totam provident vel doloremque natus nisi odio saepe.
-            Neque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
-            optio error. Doloribus quas vel ab accusamus officiis, libero rem
-            quis earum delectus perferendis maxime, deleniti quasi porro, enim
-            culpa necessitatibus.
-          </div>
-        </div> */}
-      </section>
+      <Education />
 
       {/* Divider 2*/}
       <div className="relative w-full overflow-hidden transform rotate-180 bg-green-500">
@@ -200,34 +94,7 @@ export default function App() {
         </svg>
       </div>
 
-      {/* Projects Section */}
-      <section className="bg-blue-500 space-y-20 p-10">
-        {/* Typewriter Effect */}
-        <div className="flex justify-center">
-          <div className="inline-block text-[70px]">
-            <TypeWriterTitle text={"Projects."} />
-          </div>
-        </div>
-
-        {/* Cards */}
-        <div className="flex space-x-[30px] justify-center">
-          <div className="card">
-            <Card />
-          </div>
-          <div className="card">
-            <Card />
-          </div>
-          <div className="card">
-            <Card />
-          </div>
-          <div className="card">
-            <Card />
-          </div>
-          <div className="card">
-            <Card />
-          </div>
-        </div>
-      </section>
+      <Projects />
 
       {/* Divider 3 */}
       <div className="relative w-full overflow-hidden transform rotate-180 bg-blue-500">
@@ -253,13 +120,7 @@ export default function App() {
         </svg>
       </div>
 
-      <section className="bg-pink-500 space-y-20 p-10">
-        <div className="flex justify-center">
-          <div className="inline-block text-[70px]">
-            <TypeWriterTitle text={"Experiences."} />
-          </div>
-        </div>
-      </section>
+      <Experiences />
     </section>
   );
 }
