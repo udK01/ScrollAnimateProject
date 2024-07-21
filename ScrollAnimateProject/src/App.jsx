@@ -18,25 +18,11 @@ export default function App() {
       });
     });
 
-    const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("slide");
-        } else {
-          entry.target.classList.remove("slide");
-        }
-      });
-    });
-
     const hiddenElements = document.querySelectorAll(".hide");
     hiddenElements.forEach((el) => observer.observe(el));
 
-    const cardElements = document.querySelectorAll(".card");
-    cardElements.forEach((card) => cardObserver.observe(card));
-
     return () => {
       hiddenElements.forEach((el) => observer.unobserve(el));
-      cardElements.forEach((card) => cardObserver.unobserve(card));
     };
   }, []);
 
