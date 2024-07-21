@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import Education from "./components/Education";
 import AboutMe from "./components/AboutMe";
