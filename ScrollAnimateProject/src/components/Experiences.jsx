@@ -12,6 +12,7 @@ export default function Experiences() {
   const desc3 =
     "Gained hands-on experience by engaging with customers, processing orders and payments, and preparing beverages. Ensured prompt, accurate order delivery, resolved customer issues professionally, and maintained a clean, organized work environment. Proactively managed inventory and restocked supplies.";
 
+  // Preset for creating box layout
   function box(icon, title1, title2, description, duration) {
     return (
       <div className="flex flex-col items-center border-[10px] border-white border-dashed p-10 size-[500px] justify-between hide">
