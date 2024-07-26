@@ -1,5 +1,6 @@
 import { MdOutlineMailOutline } from "react-icons/md";
-import { FaGithub } from "react-icons/fa6";
+import { FaD, FaGithub } from "react-icons/fa6";
+import { FaDiscord } from "react-icons/fa";
 
 import TypeWriterTitle from "./TypeWriterTitle";
 
@@ -27,6 +28,7 @@ export default function ContactInfo() {
             "dominik.muranyi@gmail.com"
           )}
           {box(<FaGithub className="size-16" />, "udK01")}
+          {box(<FaDiscord className="size-16" />, "udKay")}
         </div>
       </div>
     </section>
