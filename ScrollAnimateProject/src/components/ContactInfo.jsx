@@ -1,5 +1,5 @@
 import { MdOutlineMailOutline } from "react-icons/md";
-import { FaD, FaGithub } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import { FaDiscord } from "react-icons/fa";
 
 import TypeWriterTitle from "./TypeWriterTitle";
